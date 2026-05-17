@@ -13,8 +13,8 @@ modprobe mac80211_hwsim radios=1
 # 4. configure wlan interface
 sudo ifconfig wlan0 down
 ip link set wlan0 name wlan0mon
-iw dev wlan0 set type monitor
-sudo ifconfig wlan0 up
+iw dev wlan0mon set type monitor
+sudo ifconfig wlan0mon up
 
 # 5. Send UDP packets received from Mikrotik AP to virtual WLAN monitoring interface
 sudo tzsp2pcap -f -p 37008 | sudo tcpreplay --topspeed -i wlan0mon -
