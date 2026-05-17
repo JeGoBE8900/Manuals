@@ -2,6 +2,8 @@
 ######################################################
 
 # 1. Setup a Mikrotik AP to sniff packets and stream it as TZSP packets to a linux host
+https://help.mikrotik.com/docs/spaces/ROS/pages/8978446/Wireless+Interface#WirelessInterface-Sniffer
+
 # 2. packages needed to install virtual wlan interface and send UDP packets to this interface
 sudo apt install tzsp2pcap tcpreplay iproute2
 
