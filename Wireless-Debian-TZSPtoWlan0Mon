@@ -14,6 +14,7 @@ sudo ifconfig wlan0 up
 
 #Send UDP packets received from Mikrotik AP to virtual WLAN monitoring interface
 sudo tzsp2pcap -f -p 37008 | sudo tcpreplay --topspeed -i wlan0mon -
+sudo tzsp2pcap -f -p 37008 | sudo tcpreplay --topspeed -i wlan0mon - > /dev/null 2>&1
 
 #remove virtual wlan interface
 sudo rmmod mac80211_hwsim
