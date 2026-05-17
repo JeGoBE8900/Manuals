@@ -1,0 +1,17 @@
+#packages needed to install virtual wlan interface and send UDP packets to this interface
+sudo apt install tzsp2pcap tcpreplay iproute2
+
+#create virtual wlan interface
+modprobe mac80211_hwsim radios=1
+
+#configure wlan interface
+sudo ifconfig wlan0 down
+ip link set wlan0 name wlan0mon
+iw dev wlan0 set type monitor
+sudo ifconfig wlan0 up
+
+#Send UDP packets received from Mikrotik AP to virtual WLAN monitoring interface
+sudo tzsp2pcap -f -p 37008 | sudo tcpreplay --topspeed -i wlan0mon -
+
+#remove virtual wlan interface
+sudo rmmod mac80211_hwsim
