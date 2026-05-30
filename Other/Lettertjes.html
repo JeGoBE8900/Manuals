@@ -1,0 +1,506 @@
+<html lang="nl">
+
+<meta charset="UTF-8">
+<title>woordzoeker</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script>
+
+    function getLettertjes(){
+        var lettertjes = [];
+            lettertjes[0] = ("VREWESAABLMLIBNFXTWETUHHVMVIYVJKRQANEUFNNHPRMYKZHIZUQBOEMWJNIOMJJJXFAVDHNQWLRIKP").toUpperCase();
+            lettertjes[1] = ("NIBGOPPDAZXODKWQNTVKOYHYIEYDHUMXRHGOPZXJBCDKQVBXUMLYJBOEKHOUDSOFTWARETCSZWJGWSPW").toUpperCase();
+            lettertjes[2] = ("Rldbsqpmzmnmkihnaoabomloxypesvosnalabhsyvopcwxxieawlrgxtkdhczpawdhjochsxpbtvvuem").toUpperCase();
+            lettertjes[3] = ("Bkizubyrtdtfjaeurbaqzzogmddqfakicbwimvolqzjnbdoyiwhodefwkkseqdbpnjyulbuhnyjcuvnt").toUpperCase();
+            lettertjes[4] = ("Prgskxaxegtbkxdppfzxmazeayzrvnyfjorgmfgqjnohqamodptwhoxfraeakjvoovzjzrnyxbdflpsv").toUpperCase();
+            lettertjes[5] = ("Xgniredrovninkdcgnaxugftavkwmwzhvhfmcfasynubfvcniifxqexhvehxhpiqzlmzqiylufiknkik").toUpperCase();
+            lettertjes[6] = ("Utekxrnqrcvidhtlzitzwfvtreifgzyfxgzxvuqpysicaicesearghxfkvcfykyjgktofvmmqeixflob").toUpperCase();
+            lettertjes[7] = ("Evliveqaarpjnixghfwtgbtrartgiosarlgsmmtpbyttbarlbyknxsjfhlnhymcmdldhjlocrrstgqet").toUpperCase();
+			lettertjes[8] = ("OCCNMKLSXDGKEEDINNDEMQWCEMEKPYFCPSKCYMRCINKAPWQZULQSFBTHALLMTFNFPPZSBMFQGHZFNFNX").toUpperCase();
+			lettertjes[9] = ("UQZEOUJRMRSHPRKCPACAVRXMROQFMHOTHIQXPINGABILTTFVSERTTLGAKUWBGSUHYGLZYWAKHIESKWTU").toUpperCase();
+			lettertjes[10] = ("QJRNYEIIZEYGUENEJDJBORJTMGPMEFGPSORJHKQSPOERWUKRSSOXOCCXOUOTDKBSQLVWCSFHJZCFUWOF").toUpperCase();
+			lettertjes[11] = ("ALUITGAVENTHZAIDRCZZLHDGHEQJOSRCIAGHQHBQWTVUIHUQFOIWVSYFLJJODDEIIZEXPYOUYPWEFQEE").toUpperCase();
+			lettertjes[12] = ("WMWRKKREPGLEKIVELRFNPXYHENTSGGHKAQLZTDYVOOHMLFBTKPJNIIKULAXQTZNKJEKVDMCFLPXWZFZI").toUpperCase();
+			lettertjes[13] = ("FHGNGJTXRFRUTBZXIVAQUIZCGSGSUKYJCREUDQESQLBXAXXICWDFYANALYSEVQOECSEEPWLJQYFABFEG").toUpperCase();
+			lettertjes[14] = ("QGJZFYUIEQXPVCIDUDUAGACXLBIWFMKLBBZMCDHCLJCEASQAXLEEICNANIFJYBHPEVTZZTBCXXAJYOGE").toUpperCase();
+			lettertjes[15] = ("BEDRIJFSVOORHEFFINGYJHNKUEDSCEZSFGPGSERRXASBICQQTVVDFACTUURFJPMEQOZAUCQREKZKYNGI").toUpperCase();
+			lettertjes[16] = ("VIZEOADZPELUNGKWPNIKLMUHZHNUOKWHYJCATQPVRKOWZTSXWRXBLQVZJWEMTVSEHPWGNGEBVUHACDIS").toUpperCase();
+			lettertjes[17] = ("VNDSGWTQVLOBVZVKMAKBEVEMUEABSVEHVTBYIJBMGXLLYGASRHCKEEQOAOKPGMEBXITBODSOCUDGEENT").toUpperCase();
+			lettertjes[18] = ("KFHFTAAEQBMPMSSIPASSIVANUETCIMTPBLDPKOUUNFVCJCCDIPNZECXORAWHVKESGIRLUCEADVXUCRGB").toUpperCase();
+			lettertjes[19] = ("KZYTTAREPXSKTKSOSHABIMUJORSCXJXZNSOWTYWWYXADWBJKIIZIISNZLYJPJNMJQROOVREORSEDKNWS").toUpperCase();
+			lettertjes[20] = ("Rsncdarntxswykobnssknrizpzftqdelzodskanvibbrndhwblitcwxespqncjeqcwhqdesifeiuzebi").toUpperCase();
+			lettertjes[21] = ("Hycrphhiguutbworogzrqcujgxlwqerwaawvlwzjgiiupvqesgonrqqcbkxhzmwrslberhjoycmabmot").toUpperCase();
+			lettertjes[22] = ("Xztaougsecjbceogmaqzgkhjlyebchhjlbpjxtfafxleelxhomrsyiipvvmnjabaemrpdsgxwpkcdirh").toUpperCase();
+			lettertjes[23] = ("Xlvncbscbvnmkblohscfojhocvzsqvmadgqalqwugiisaadmenjfnvpnhacmzyvezytmtdnxgootonzm").toUpperCase();
+			lettertjes[24] = ("Dpaauzhopiefhooruzrkfohnjphnxlizxtzrhvuhejtiqukmageceommrhvjjrddlppexboodcpuigxi").toUpperCase();
+			lettertjes[25] = ("Mycrvbiydwqnxrunugqozsbpjskmxaeslkyfncfmwievifdraznpjlckskmapnnoveltzxjaekfknsgf").toUpperCase();
+			lettertjes[26] = ("Tbdhoqnjgfqvtgtxcdmkredietwaardigzbkiasjpbidsymizosvcliorilpacjsdlgmvpgigwfpcngd").toUpperCase();
+			lettertjes[27] = ("Rzoyjqdgvqhsyluajezspvgspsoacrmakboifkxtrztaxnmctuklendynufahvicikbgvrmvagfokuuf").toUpperCase();
+			lettertjes[28] = ("Ccspgpyuvosrgzbzsxqoxxclypcenfblsvaappgqadzgpkxjhuknglmmwkhnbsknvwzeiitnrvhkemtl").toUpperCase();
+			lettertjes[29] = ("Nqaonnwutahufndrzgzbulzjtczaegtlfapzdogdoadnfifbenirjfmmdaptodgniuseqnqrdjauemxk").toUpperCase();
+			lettertjes[30] = ("Vhytcxsekmcepuaansprakelijkheidienyyalkgvhmihunxanhkeoeawtfuevladumawtgkjrenqeeo").toUpperCase();
+			lettertjes[31] = ("yoiharmnrxqxokodzuchlvvrvregardnetsokkbkvkitrizggqukzyfnmzdsulanecztiecvimkzlrbw").toUpperCase();
+            lettertjes[32] = ("Avtepoiotccflnuzyuxieyjlwyxwgyubcgqwweegyoasrvlylqridamdhpaccnmknvftmqnsbwfbuecd").toUpperCase();
+            lettertjes[33] = ("Pdjeopkjurvglxhmddanpyehuponggkbjwwbpcdzsroagxhxxtzpgrdardcrdhuxdhilpcppltlwkivl").toUpperCase();
+            lettertjes[34] = ("Dsakjbdxzckhsmvysunuscmprfegeoyeglunwaryarklnamokvwkwmhamcaelwrkqqvooxgmasvixbbv").toUpperCase();
+            lettertjes[35] = ("Larnnraxjlmjmqfadolouveexppwxfezadvhjsiyvreeevrybabxxcatpheatjgivaidopzcazklbndz").toUpperCase();
+            lettertjes[36] = ("Qceakuaxuropwamiovbyzzkrxtmbkboxgvumhbjkojkbiriptfosefooflfayainjbezfofvtakddwir").toUpperCase();
+            lettertjes[37] = ("Hwdbolnyozzwtzutotrebwolfhsacefeitdcdrfrhzyufjxqjooeoglqtuvynajcovlkyvepryhtfibm").toUpperCase();
+            lettertjes[38] = ("wvrtzemdkrzzaksqbdixkimlihhcyztnkgrdobstdafoxgqrbrduxwtmgtgpwscdebiteurxaehqvblf").toUpperCase();
+            lettertjes[39] = ("Fdunopjtlqdptcpjhifcrnnrvcjrzorcflpxqgweikcmcvsoqffpgqeqtnjiwsurjlgnuosuwguhpvhv").toUpperCase();
+            lettertjes[40] = ("Msuuwnqmfufhhbdgjiqbxhkhyvhmwlnqztyxetazeclkykbbeabedrijfsleiderfpshgisvkuzwahqd").toUpperCase();
+            lettertjes[41] = ("Actphghgtxbanstafyensymegzljsdcbgdeyqggzpqmwunvljiwtckmdxoervvmxntiadcyifhgujpou").toUpperCase();
+            lettertjes[42] = ("Vyssiiqpebpymotadvfhbqafdudpuirsmfgmhoestugwjfniotbehwxdmyskxozthzidevphjwutfhmu").toUpperCase();
+            lettertjes[43] = ("Ckeiyttpebuazapswyoclswjhaxksgyseyrlslntekzcfcrgfafnjnsxyocbbqojebuhjsidcfcqyios").toUpperCase();
+            lettertjes[44] = ("Gzbunilbqctjecqeqnvnthsoydgkhidraeiaibawaeprdwjagitvexatochmzkurvykvhlfwcavaucbi").toUpperCase();
+            lettertjes[45] = ("Jrlrkvbflbzgmtehnmruiwtaxdefdnydwndosfmdzpaopugtjrhphqaymgspfvfbdntqdkzkgqdhcsif").toUpperCase();
+            lettertjes[46] = ("Vqskiejhuyjqnixflhurllkayydcvgrpkvrkbontyzggleliesnlopcekteumrlgaefiwairrukmpknf").toUpperCase();
+            lettertjes[47] = ("Fhcrqmmcmnefpvhjrxhvzbgykegjwdyolmwtbzrvbzhxfaxexrflbsiwqrkipznjgaevewylegwutmcn").toUpperCase();
+            lettertjes[48] = ("znezvkjavkfxfabsxqgooxgrdigznemkntekolsgnimenrednoaqjvmmucxhteofxeblqmrdwlihnssw").toUpperCase();
+            lettertjes[49] = ("bdwmlshvnkqwtqnrmrdsdeeindvbksnveicvbcaeimcnkdhtfnftqejpcodchcmbzjwxyuiokumfylut").toUpperCase();
+            lettertjes[50] = ("soklbaxdorncqrgpigqsipvqklqatxufgwpefshncvzhfgdzibyfkcgihuaxsyaqfjdxxlbnqggvqctc").toUpperCase();
+            lettertjes[51] = ("iedjitawzmeubpahglmatezbbznexfnvuolaqtadmyrqvdgshehrybabtbbisrssnsvjipecioejklvi").toUpperCase();
+            lettertjes[52] = ("gglckgwtcenveiqlfjecrnyoptngwfmzjyndnaqykcuxtonksltpdkocvlutxxmxnocgqmtluovzsdxc").toUpperCase();
+            lettertjes[53] = ("unbqytfjifbwosxyewknpsabeknvsxnhiglropintcwveaztovyipgniginerevgraeqlpvtreqpflhg").toUpperCase();
+            lettertjes[54] = ("sqtvstqtapqefryhggfixiqtgithcilpgnitsalebkraezracjgndmjqevfasynrlnrrewmtbyscnpvn").toUpperCase();
+        lettertjes[55] = ("lwcacsachcalxvxbruavdobonhmryslfkplssoxlpfpigazaxtvarijgdvypbbsdciptjyrakfravlei").toUpperCase();
+        lettertjes[56] = ("mzsasrzrgibkutvdraaaaeevpugyftqdvhlyglkbtbrytuqooijrkeumaeoerceehwjfszgenemttmir").toUpperCase();
+        lettertjes[57] = ("yyncuqcglbaxtbpjsrcylngectogivieokddnqllbisekarhllweegwqgihnfzlattefdnludxuqgepe").toUpperCase();
+        lettertjes[58] = ("fplthbmratlwqrchrrvehcjicvacryjtboekhoudinghsbvmzubgnytkiqnsmclenzqpzmiigzbtwnjk").toUpperCase();
+        lettertjes[59] = ("yfczhrsoiepgwsaejnfkmldpoukochfqbncuhafhhittvsznrjcizydfvlvibaozsyuucltwetfidpne").toUpperCase();
+        lettertjes[60] = ("tatdgynowttcnfetbfokpqzyfczwaafjonxitaaveetvmegfmcfzjkuqqzqojuywpeynrehtswiqcciz").toUpperCase();
+        lettertjes[61] = ("fedrpyvtmxhhwdejsxobhrttsokaazsnamneeaysmnfkvgbpufqjmlyucmhejqcqelpyuxtmxfguojhr").toUpperCase();
+        lettertjes[62] = ("jdeapjbbnosyoagtnkznhwocgnoduhoeewiayvqkrzarwruteqpppechaxunikgdcnmrnjdnicddxhfe").toUpperCase();
+        lettertjes[63] = ("jejoycrohtzuqxanihswmfneeurzjxevvdmdweaitptsfabhlmnrpkramvmksimaugecindrvkxlfkhv").toUpperCase();
+        lettertjes[64] = ("dpafaokejkfpuabeupthtggipovocoyeozuavtuqifghdmnghaeggjgtdzsaosioldgdijtygfipacme").toUpperCase();
+        lettertjes[65] = ("ylhtzxvkddmmlfrfkhnxpnhthcxlonuketfbxsttjkvbuocsoivardcgefeplufvanycmlsglffvuyal").toUpperCase();
+        lettertjes[66] = ("enbotcfswkbpkgcrgbfciynantdwvkhabxemkbaeznanodhmnttimudlrdfiqfuotaujyzyshyqbofkv").toUpperCase();
+        lettertjes[67] = ("fkcetzcowynywybwlhfoocgssurepoqenvqbbasufmjlqmtvnglwbpelbsutbsqtietilibatnerfhre").toUpperCase();
+        lettertjes[68] = ("vzlcgskenecothmpnfdabxiinfufmodrxcwrlkactiloecelnglmgasikvnayyvietuyfvdpietrffqe").toUpperCase();
+        lettertjes[69] = ("futloocftupqxgorxgcechzrbujvmfibwoxwmjegiznhosoxzgfonvizkwfabkeagugpiajrirlamgxt").toUpperCase();
+        lettertjes[70] = ("xsqprkvsqarvhxvatiassitaljdykxfodrkhqagxpafptjgjafscrgfgsuzlmbmavpnpkljrjhulgwhp").toUpperCase();
+        lettertjes[71] = ("carrkoozlsnnrstabdykaollvkzykhsueyzuvdnoxhwengvfpcncotbrzlpsfcwphnilvuenufhaizjr").toUpperCase();
+        lettertjes[72] = ("nuymjktgdbqtxpsjyjdrrznupomxxmlerkxpqnfxrgranwrihwudiehraabkertfamtnrtjqtsakznkn").toUpperCase();
+        lettertjes[73] = ("xhhyqpdyvgoqrjegwfdvigpgkoplukoxdnlzgfnibinuambuqhqaytxhhzggcfoyousosajtfhlqzqgi").toUpperCase();
+        lettertjes[74] = ("nxefwcrkjewqbrvaffzfrgteonehrctjdyfgpoecnmqgcilwjtyewjutvganrnptbwazbuwtzsbovxsq").toUpperCase();
+        lettertjes[75] = ("lfpdabeouwrxpmplaoelhbarfrfssevnvbupywqgzdrwwdpwxqfljudjiwpogqwgnelybwxlphhzsljr").toUpperCase();
+        lettertjes[76] = ("udtrgvgeulklakhsrsthvrrpnbphzfxebddzpusdsrbtendcuzjhepevxbiautvwbzeiyreszfwldicr").toUpperCase();
+        lettertjes[77] = ("nxalwecqzmouimgnsganwuqpyukmltskxcimxiasiyanegufzcfuwijquzzfofgqrgbineajjjwbpebq").toUpperCase();
+        lettertjes[78] = ("kxzltzgugvadnezapyybtfwwgdowkhpaiwwlaapawnbxrrechtspersoonlijkheiddndqccabutbstv").toUpperCase();
+        lettertjes[79] = ("dtrbqzmsfnjmpfsamcxuovrxqfibuifxaqxsyzusettblfhvtraakspeorebpavrnfpsbddiftbftrld").toUpperCase();
+			
+        return lettertjes;
+    }
+
+    function addZoekwoorden(){
+
+        var woordjes = [];
+        woordjes.push ("AANDEEL","AANDEELHOUDER","AANSLAGJAAR","AANSPRAKELIJKHEID","ACCOUNTANT","ACTIVA","AFSCHRIJVING","AFTREKBAARHEID","ANALYSE","AUDIT","BALANS","BEDRIJFSLEIDER","BEDRIJFSVOORHEFFING","BEDRIJFSWAGEN","BELASTING","BELASTINGADVISEUR","BELASTINGPLICHTIG","BENCHMARKING","BELEGGING","BEROEPSKAART","BESTUURDER","BEZOLDIGING","BOEKHOUDSOFTWARE","BOEKHOUDING","BOEKJAAR","BREAKEVEN","BUDGET","CASHFLOW","CONSOLIDATIE","CREDITEUR","DEBITEUR","DIVIDEND","DUEDILIGENCE","EENMANSZAAK","EXTRALEGAAL","FACTUUR","FACTURATIE","FINANCIEEL","FISCAAL","FORFAITAIR","FUSIE","GROOTBOEK","HEDGE","HYPOTHEEK","INCASSO","INKOMSTEN","INVORDERING","INVESTERING","JAARREKENING","KAPITAAL","KASBOEK","KASSTROOM","KOSTENPLAATS","KOSTENDRAGER","KREDIETWAARDIG","KRUISPUNTBANK","KWARTAALBIJDRAGE","LENING","LIQUIDITEIT","LOONHEFFING","MAATSCHAP","MANDAAT","MARGES","OBLIGATIE","OMZET","ONDERNEMER","ONDERNEMINGSLOKET","ONDERNEMINGSNUMMER","OVERNAME","PASSIVA","PENSIOEN","PENSIOENKAPITAAL","PENSIOENTOEZEGGING","PRIJSSTELLING","PROGNOSE","RECHTSPERSOONLIJKHEID","RECHTSBIJSTAND","REGULARISATIE","RENTABILITEIT","SCHULDEN","SOLVABILITEIT","SPECULATIE","STARTKAPITAAL","STATUUT","STRATEGIE","SUBSIDIE","TARIEVEN","TRANSACTIE","UITGAVEN","VALUTA","VENNOOTSCHAP","VERENIGING","VERLIES","VERMOGENSBEHEER","VERZEKERING","VOORDEEL","VRIJSTELLING","WINST","ZAAKVOERDER","ZELFSTANDIG");
+
+        for (i = 0;i<woordjes.length;i++){
+            var opt = document.createElement("option");
+            opt.text = woordjes[i];
+            document.getElementById("woordjeslijst").add(opt);
+
+        }
+
+
+        var lettertjes = getLettertjes();
+
+
+            var table = document.getElementById("lettertabel");
+
+            for(var i=0;i<lettertjes.length;i++){
+                var row = table.insertRow(i);
+
+                for(var x=0;x<lettertjes[i].length;x++){
+                    var cell = row.insertCell(x);
+                    cell.innerHTML = lettertjes[i][x];
+                }
+            }
+
+
+    }
+</script>
+
+</head>
+
+<body  onload="addZoekwoorden()">
+
+    <script>
+
+        function zoekWoord(woord,lettertjes){
+            var status = document.getElementById("status");
+
+            var table = document.getElementById("lettertabel");
+            var rows = table.getElementsByTagName("tr");
+
+            for(var x=0;x<lettertjes.length;x++){
+                for(var y=0;y<lettertjes[x].length;y++){
+
+
+                    if(woord[0] == lettertjes[x][y]){
+
+                        //var cells = rows[x].getElementsByTagName("td"); 
+                        //cells[y].style.backgroundColor = "yellow";
+                        
+                        //eerste letter komt overeen, zoek start zoeken rondom
+
+                        //zoek naar rechts
+                        /////// bedrijfsvoorheffing
+
+                        var gevonden = "";
+
+                        if(gevonden != woord){
+                            gevonden = ""
+                            for(var i = 0; i < woord.length;i++){
+
+                                if(i + y >= lettertjes[x].length){
+                                        //alert ('te rechts ' + woord[i])
+                                        gevonden = ""
+                                        break;
+                                }
+
+                                if(woord[i] == lettertjes[x][y+i]){
+                                            //var cells = rows[x].getElementsByTagName("td"); 
+                                            //cells[y+i].style.backgroundColor = "yellow";
+                                            gevonden = gevonden + woord[i]
+                                }else{
+                                    bGevonden = ""
+                                    break;
+                                }
+
+                                if(woord == gevonden){
+                                    //alert('gevonden op ' + (x +1) + ' -' + (y + 1))
+
+                                    for(var g = 0; g < woord.length;g++){
+                                            var cells = rows[x].getElementsByTagName("td"); 
+                                            cells[y+g].style.backgroundColor = "yellow";
+                                    }
+                                    return;
+                                }
+                                
+
+                            }
+                        }
+
+                        //zoek naar links
+                        /////// balans
+                        if(gevonden != woord){
+                            gevonden = ""
+                            for(var i = 0; i < woord.length;i++){
+
+                                if(y - i <= 0){
+                                        //alert ('te links ' + woord[i])
+                                        gevonden = ""
+                                        break;
+                                }
+
+                                if(woord[i] == lettertjes[x][y-i]){
+                                            //var cells = rows[x].getElementsByTagName("td"); 
+                                            //cells[y-i].style.backgroundColor = "yellow";
+                                            gevonden = gevonden + woord[i]
+                                            //alert(gevonden)
+                                }else{
+                                    bGevonden = ""
+                                    break;
+                                }
+
+                                if(woord == gevonden){
+                                    //alert('gevonden op ' + (x +1) + ' -' + (y + 1))
+
+                                    for(var g = 0; g < woord.length;g++){
+                                            var cells = rows[x].getElementsByTagName("td"); 
+                                            cells[y-g].style.backgroundColor = "yellow";
+                                    }
+                                    return;
+                                }
+                                
+
+                            }
+                        }
+
+                        //zoek naar onder
+                        // vermogensbeheer
+
+                        if(gevonden != woord){
+                            gevonden = ""
+                            for(var i = 0; i < woord.length;i++){
+
+                                if(x + i >= lettertjes.length){
+                                        //alert ('te links ' + woord[i])
+                                        gevonden = ""
+                                        break;
+                                }
+
+                                if(woord[i] == lettertjes[x + i][y]){
+                                            //var cells = rows[x+i].getElementsByTagName("td"); 
+                                            //cells[y].style.backgroundColor = "yellow";
+                                            gevonden = gevonden + woord[i]
+                                            //alert(gevonden)
+                                }else{
+                                    bGevonden = ""
+                                    break;
+                                }
+
+                                
+                                if(woord == gevonden){
+                                    //alert('gevonden op ' + (x +1) + ' -' + (y + 1))
+
+                                    for(var g = 0; g < woord.length;g++){
+                                            var cells = rows[x+g].getElementsByTagName("td"); 
+                                            cells[y].style.backgroundColor = "yellow";
+                                    }
+                                    return;
+                                }
+                                
+
+                            }
+                        }
+
+                        //zoek naar boven
+                        //zelfstandig
+                        if(gevonden != woord){
+                            gevonden = ""
+                            for(var i = 0; i < woord.length;i++){
+
+                                if(x - i <= 0){
+                                        //alert ('te links ' + woord[i])
+                                        gevonden = ""
+                                        break;
+                                }
+
+                                if(woord[i] == lettertjes[x - i][y]){
+                                            //var cells = rows[x].getElementsByTagName("td"); 
+                                            //cells[y-i].style.backgroundColor = "yellow";
+                                            gevonden = gevonden + woord[i]
+                                            //alert(gevonden)
+                                }else{
+                                    bGevonden = ""
+                                    break;
+                                }
+
+                                
+                                if(woord == gevonden){
+                                    //alert('gevonden op ' + (x +1) + ' -' + (y + 1))
+
+                                    for(var g = 0; g < woord.length;g++){
+                                            var cells = rows[x-g].getElementsByTagName("td"); 
+                                            cells[y].style.backgroundColor = "yellow";
+                                    }
+                                    return;
+                                }
+                                
+
+                            }
+                        }
+
+
+                        //zoek naar rechtsonder
+                        //statuut & fusie
+
+                        if(gevonden != woord){
+                            gevonden = ""
+                            for(var i = 0; i < woord.length;i++){
+
+                                //onder & rechts
+                                if((x + i >= lettertjes.length) || (y + i >= lettertjes[x].length)){
+                                        //alert ('te rechtsonder ' + woord[i])
+                                        gevonden = ""
+                                        break;
+                                }
+
+                                if(woord[i] == lettertjes[x + i][y + i]){
+                                            //var cells = rows[x].getElementsByTagName("td"); 
+                                            //cells[y-i].style.backgroundColor = "yellow";
+                                            gevonden = gevonden + woord[i]
+                                            //alert(gevonden)
+                                }else{
+                                    bGevonden = ""
+                                    break;
+                                }
+
+                                
+                                if(woord == gevonden){
+                                    //alert('gevonden op ' + (x +1) + ' -' + (y + 1))
+
+                                    for(var g = 0; g < woord.length;g++){
+                                            var cells = rows[x+g].getElementsByTagName("td"); 
+                                            cells[y+g].style.backgroundColor = "yellow";
+                                    }
+                                    return;
+                                }
+                                
+
+                            }
+                        }
+
+                        //zoek naar rechtsboven
+                        //boekjaar & fiscaal
+                        if(gevonden != woord){
+                            gevonden = ""
+                            for(var i = 0; i < woord.length;i++){
+
+                                //boven & rechts
+                                if((x - i <= 0) || (y + i >= lettertjes[x].length)){
+                                        //alert ('te rechtsonder ' + woord[i])
+                                        gevonden = ""
+                                        break;
+                                }
+
+                                if(woord[i] == lettertjes[x - i][y + i]){
+                                            //var cells = rows[x].getElementsByTagName("td"); 
+                                            //cells[y-i].style.backgroundColor = "yellow";
+                                            gevonden = gevonden + woord[i]
+                                            //alert(gevonden)
+                                }else{
+                                    bGevonden = ""
+                                    break;
+                                }
+
+                                
+                                if(woord == gevonden){
+                                    //alert('gevonden op ' + (x +1) + ' -' + (y + 1))
+
+                                    for(var g = 0; g < woord.length;g++){
+                                            var cells = rows[x-g].getElementsByTagName("td"); 
+                                            cells[y+g].style.backgroundColor = "yellow";
+                                    }
+                                    return;
+                                }
+                                
+
+                            }
+                        }
+
+                        //zoek naar linksonder
+                        //kasstroom
+
+                        if(gevonden != woord){
+                            gevonden = ""
+                            for(var i = 0; i < woord.length;i++){
+
+                                //onder & rechts
+                                if((x + i >= lettertjes.length) || (y - i <= 0)){
+                                        //alert ('te rechtsonder ' + woord[i])
+                                        gevonden = ""
+                                        break;
+                                }
+
+                                if(woord[i] == lettertjes[x + i][y - i]){
+                                            //var cells = rows[x].getElementsByTagName("td"); 
+                                            //cells[y-i].style.backgroundColor = "yellow";
+                                            gevonden = gevonden + woord[i]
+                                            //alert(gevonden)
+                                }else{
+                                    bGevonden = ""
+                                    break;
+                                }
+
+                                
+                                if(woord == gevonden){
+                                    //alert('gevonden op ' + (x +1) + ' -' + (y + 1))
+
+                                    for(var g = 0; g < woord.length;g++){
+                                            var cells = rows[x+g].getElementsByTagName("td"); 
+                                            cells[y-g].style.backgroundColor = "yellow";
+                                    }
+                                    return;
+                                }
+                                
+
+                            }
+                        }
+
+                        //zoek naar linksboven
+                        //maatschap
+
+                        if(gevonden != woord){
+                            gevonden = ""
+                            for(var i = 0; i < woord.length;i++){
+
+                                //onder & rechts
+                                if((x - i <= 0) || (y - i <= 0)){
+                                        //alert ('te rechtsonder ' + woord[i])
+                                        gevonden = ""
+                                        break;
+                                }
+
+                                if(woord[i] == lettertjes[x - i][y - i]){
+                                            //var cells = rows[x].getElementsByTagName("td"); 
+                                            //cells[y-i].style.backgroundColor = "yellow";
+                                            gevonden = gevonden + woord[i]
+                                            //alert(gevonden)
+                                }else{
+                                    bGevonden = ""
+                                    break;
+                                }
+
+                                
+                                if(woord == gevonden){
+                                    //alert('gevonden op ' + (x +1) + ' -' + (y + 1))
+
+                                    for(var g = 0; g < woord.length;g++){
+                                            var cells = rows[x-g].getElementsByTagName("td"); 
+                                            cells[y-g].style.backgroundColor = "yellow";
+                                    }
+                                    return;
+                                }
+                            }
+                        }
+
+
+       
+                    }
+
+                }
+            }
+        }
+
+
+        function startZoeken(){
+
+            var lettertjes = getLettertjes();
+
+            var e = document.getElementById("woordjeslijst");
+            var zoekwoord = e.options[e.selectedIndex].text;
+
+
+            //tabel schoon zetten
+
+            var table = document.getElementById("lettertabel");
+            var rows = table.getElementsByTagName("tr");
+
+            for(i=0; i<rows.length;i++){
+
+                var cells = rows[i].getElementsByTagName("td"); 
+
+                for(var j=0; j<cells.length;j++){
+                    cells[j].style.backgroundColor = "white";
+
+                }
+            }
+
+
+            zoekWoord(zoekwoord,lettertjes)
+        }
+    </script>
+
+    <h1>woordzoeker</h1>
+    <p id="status"></p>
+    
+    <select title="Kies een woord" id="woordjeslijst"></select>
+
+
+    <button type="button" onclick="startZoeken()">Start zoeken</button>
+    
+
+<table id="lettertabel" width="1900px">
+    
+</table>
+
+</body>
+
+
+
+</html>
