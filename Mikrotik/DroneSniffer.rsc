@@ -44,4 +44,8 @@
 }
 
 
-/interface/wifi sniffer wifi1 duration=5 stream-rate=4294967295 stream-address=192.168.10.86
+/interface/wifi sniffer wifi1 duration=0 stream-rate=4294967295 stream-address=192.168.10.32
+
+:execute {/interface/wifi sniffer wifi1 duration=0 stream-rate=4294967295 stream-address=192.168.10.32}
+ /system/script/job/print detail 
+ /system/script/job/remove 2
