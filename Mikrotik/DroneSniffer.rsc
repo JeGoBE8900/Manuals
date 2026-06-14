@@ -1,51 +1,64 @@
-:local channel6Weight 60;
-:local channelItems ({"2412";"2417";"2422";"2427";"2432";"2437";"2442";"2447";"2452";"2457";"2462";"2467"});
-:local channelWeights ({((100-$channel6Weight)/11); ((100-$channel6Weight)/11); ((100-$channel6Weight)/11); ((100-$channel6Weight)/11); ((100-$channel6Weight)/11); chan6=$channel6Weight; ((100-$channel6Weight)/11); ((100-$channel6Weight)/11); ((100-$channel6Weight)/11); ((100-$channel6Weight)/11); ((100-$channel6Weight)/11);((100-$channel6Weight)/11);});
+{
+  :local ifaceBand2Ghz [/interface/wifi/radio get [find bands~"2ghz"] interface]
+  :local ifaceBand5Ghz [/interface/wifi/radio get [find bands~"5ghz"] interface]
 
+  :foreach i in=[/interface wifi find] do={
 
-:local totalWeight 0;
-:foreach weight in=$channelWeights do={
-  :set totalWeight ($totalWeight + $weight);
-}
+      :local ifaceName [/interface wifi get $i default-name];
+      :local ifaceComment [/interface wifi get $i comment];
+      #:log info "Interface: $ifaceName, Comment: $ifaceComment" 
 
-:local randNum [:rndnum from=1 to=$totalWeight];
+      :if ($ifaceName = $ifaceBand2Ghz) do={
+          :local snifferJobsWifi24Ghz [:len [/system script job find where trace~"scheduler:schedulerDroneSniffer/script:scriptDroneSniffer/script:scriptDroneSniffer2.4Ghz"]]
+          #:log info "Number of current wifisniffer 2.4Ghz command jobs: $snifferJobsWifi24Ghz"
 
-:local selectedValue "Unknown";
-:local currentThreshold 0;
+          :if ($ifaceComment = "drone" && $snifferJobsWifi24Ghz > 0) do={
+              #:log info "wifisniffer command already running"
 
-:for i from=0 to=([:len $channelItems] - 1) do={
-  :local weight ($channelWeights->$i);
-  :set currentThreshold ($currentThreshold + $weight);
+              /system script run "DroneSnifferSetChannel2.4Ghz"
+
+              
+          }
+
+          :if ($ifaceComment = "drone" && $snifferJobsWifi24Ghz = 0) do={
+              :log info "wifisniffer 2.4Ghz command start"
+                /system script run "scriptDroneSniffer2.4Ghz"
+          }
+
+          :if ($ifaceComment != "drone" && $snifferJobsWifi24Ghz > 0) do={
+             :log info "Removing wifisniffer 2.4Ghz command job"
+             /system/script/job remove [find where trace~"scheduler:schedulerDroneSniffer/script:scriptDroneSniffer/script:scriptDroneSniffer2.4Ghz"]
+          }
+
+          :if ($ifaceComment != "drone" && $snifferJobsWifi24Ghz = 0) do={
+              #:log info "wifisniffer 2.4Ghz command not running"
+          } 
+        }
+
+      :if ($ifaceName = $ifaceBand5Ghz) do={
+          :local snifferJobsWifi5Ghz [:len [/system script job find where trace~"scheduler:schedulerDroneSniffer/script:scriptDroneSniffer/script:scriptDroneSniffer5Ghz"]]
+          #:log info "Number of current wifisniffer 5Ghz command jobs: $snifferJobsWifi5Ghz"
+
+          :if ($ifaceComment = "drone" && $snifferJobsWifi5Ghz > 0) do={
+              #:log info "wifisniffer command already running"
+
+              /system script run "DroneSnifferSetChannel5Ghz"
+          }
+
+          :if ($ifaceComment = "drone" && $snifferJobsWifi5Ghz = 0) do={
+              :log info "wifisniffer 5Ghz command start"
+              /system script run "scriptDroneSniffer5Ghz"
+          } 
+
+          :if ($ifaceComment != "drone" && $snifferJobsWifi5Ghz > 0) do={
+              :log info "Removing wifisniffer 5Ghz command job"
+              /system/script/job remove [find where trace~"scheduler:schedulerDroneSniffer/script:scriptDroneSniffer/script:scriptDroneSniffer5Ghz"]
+          }
+
+          :if ($ifaceComment != "drone" && $snifferJobsWifi5Ghz = 0) do={
+              #:log info "wifisniffer 5Ghz command not running"
+          } 
+      }
   
-  :if ($randNum < $currentThreshold) do={
-    :set selectedValue ($channelItems->$i);
-    :local finalChance (($weight * 100) / $totalWeight);
-    
-    # Output the result
-    :log info "Rolled: $selectedValue (Weight: $weight, Probability: $finalChance %)";
-    :break;
   }
 }
-
-
-# Check for newer wifi (wifiwave2) interfaces configuration.mode,
-:foreach i in=[/interface wifi find] do={
-    :local ifaceName [/interface wifi get $i name];
-    :local ifaceConfigMode [/interface wifi get $i configuration.mode];
-    :local ifaceConfigMode [/interface wifi get $i configuration.manager];
-    :local ifaceConfigMode [/interface wifi get $i channel.frequency];
-
-
-    :log info [/interface wifi get $i name];
-    :log info [/interface wifi get $i configuration.mode];
-    :log info [/interface wifi get $i configuration.manager];
-    :log info [/interface wifi get $i channel.frequency];
-    :log info [/interface wifi get $i about];
-}
-
-
-/interface/wifi sniffer wifi1 duration=0 stream-rate=4294967295 stream-address=192.168.10.32
-
-:execute {/interface/wifi sniffer wifi1 duration=0 stream-rate=4294967295 stream-address=192.168.10.32}
- /system/script/job/print detail 
- /system/script/job/remove 2
