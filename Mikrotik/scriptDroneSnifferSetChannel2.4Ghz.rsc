@@ -18,7 +18,7 @@
     :local selectedValue "Unknown";
     :local currentThreshold 0;
 
-    :for i from=0 to=([:len $channelItems] - 1) do={
+    :for i from=0 to=([:len $channelItems]) do={
         :local weight ($channelWeights->$i);
         :set currentThreshold ($currentThreshold + $weight);
         
@@ -35,7 +35,7 @@
     #:log info "Rolled: $selectedValue (Weight: $weight, Probability: $finalChance %)";
     :local currentChannel [/interface wifi get $ifaceBand2Ghz channel.frequency];
 
-    :if ($currentChannel != $selectedValue) do={
+    :if ($currentChannel != $selectedValue && "Unknown" != $selectedValue) do={
         :log info "Rolled: $selectedValue (Weight: $weight, Probability: $finalChance %)";
         /interface wifi set $ifaceBand2Ghz channel.frequency=$selectedValue 
         #:log info [/interface wifi get $ifaceBand2Ghz channel.frequency];

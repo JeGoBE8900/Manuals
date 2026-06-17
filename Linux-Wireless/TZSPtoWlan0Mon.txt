@@ -16,7 +16,7 @@ ip link set wlan0 name wlan0mon
 iw dev wlan0mon set type monitor
 sudo ifconfig wlan0mon up
 
-# 5. Send UDP packets received from Mikrotik AP to virtual WLAN monitoring interface
+# 5. Send UDP packets received from Mikrotik AP to virtual WLAN monitoring interface, run these commands from console
 sudo tzsp2pcap -f -p 37008 | sudo tcpreplay --topspeed -i wlan0mon -
 sudo tzsp2pcap -f -p 37008 | sudo tcpreplay --topspeed -i wlan0mon - > /dev/null 2>&1 &
 
