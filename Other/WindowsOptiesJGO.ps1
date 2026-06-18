@@ -9,3 +9,6 @@ Set-Itemproperty -path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer
 
 #expand tree to current folder
 Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced"  -Name "NavPaneExpandToCurrentFolder" -Value 1 -Type DWord
+
+#start menu left
+Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced"  -Name "TaskbarAI" -Value 1 -Type DWord
